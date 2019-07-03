@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('/survey', 'HomeController@index')->name('home');
 
-Route::post('survey', 'SurveyController@store');
+Route::post('/survey', 'SurveyController@store');

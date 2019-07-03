@@ -10,6 +10,7 @@
       <div class="col-md-6">
 
           <form action="/survey" method="post">
+            @csrf
               <div class="form-group">
                   <label for="rating">How would you rate today's program?</label>
                   <select name="rating" class="form-control">
