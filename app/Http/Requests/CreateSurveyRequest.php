@@ -25,7 +25,7 @@ class CreateSurveyRequest extends FormRequest
     {
         return [
             //
-            'user_id' => 'required',
+            // 'user_id' => 'required',
             'rating' => 'required',
             'inspire' => 'required',
             'best_part' => 'required',

@@ -18,7 +18,7 @@ class SurveyController extends Controller
 
     public function store(CreateSurveyRequest $request) // I think were the database info will be going
     {
-        $user = Survey::create($request->all());
+        $user = Survey::create($request->all()+['user_id'=>auth()->id()]);
 
         return redirect('/');
     }
