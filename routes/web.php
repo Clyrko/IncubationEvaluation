@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('survey', 'SurveyController@index')->name('survey.index');
+// Route::get('survey', 'SurveyController@index')->name('survey.index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/survey', 'HomeController@index')->name('home');
 
 Route::post('survey', 'SurveyController@store');
