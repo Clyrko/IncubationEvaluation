@@ -13,4 +13,5 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('users', UserController::class);
     $router->resource('/mob/eval', SurveyController::class);
+    $router->resource('/mob/incubators',MobileAppIncubatorsController::class);
 });

@@ -3,13 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\User;
 class Survey extends Model
 {
     protected $fillable = [
       'user_id', 'rating', 'inspire', 'best_part', 'worst', 'interesting', 'relevant', 'inspiring', 'satisfy', 'problem', 'food', 'food_selection', 'changes', 'thoughts'
     ];
-}
+
 
 /**
  * The attributes that should be hidden for arrays.
@@ -29,3 +29,9 @@ class Survey extends Model
 //     'email_verified_at' => 'datetime',
 // ];
 // }
+
+public function user()
+  {
+  return $this->belongsTo(User::class);
+  }
+}

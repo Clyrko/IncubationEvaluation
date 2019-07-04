@@ -54,11 +54,21 @@ class SurveyController extends AdminController
      * @return Show
      */
     protected function detail($id)
-    {
+{
+      $user = Survey::findOrFail($id)->user->name;
         $show = new Show(Survey::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('user_id', __('User id'));
+        // $show->field('user_id',$user, 'user');
+      //   $show->author('Name of user', function ($author) {
+      //
+      //     $author->setResource('/admin/users');
+      //
+      //     // $author->id();
+      //      $author->name();
+      //     // $author->email();
+      // });
+        $show->display('user.name','User');
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
         $show->field('rating', __('Rating'));

@@ -15,33 +15,33 @@
                   <label for="rating">How would you rate today's program?</label>
                   <select name="rating" class="form-control">
                       <option value="">Select rating</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
                       <option value="10">10</option>
+                      <option value="9">9</option>
+                      <option value="8">8</option>
+                      <option value="7">7</option>
+                      <option value="6">6</option>
+                      <option value="5">5</option>
+                      <option value="4">4</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                      <option value="1">1</option>
                       {{-- <option value="2">2</option> --}}
                   </select>
               </div>
               <div class="form-group">
                   <label for="rating">Were you inspired by today's program?</label>
                   <select name="inspire" class="form-control">
-                      <option value="">Select rating</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
+                    <option value="">Select rating</option>
+                    <option value="10">10</option>
+                    <option value="9">9</option>
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
                   </select>
 
                 </div>
@@ -64,12 +64,12 @@
                     <label for="interesting">Interesting & Entertaining</label>
 
                     <select name="interesting" class="form-control">
-                        <option value="">Select an option</option>
-                        <option value="Not at all">Not at all</option>
-                        <option value="Not really">Not really</option>
-                        <option value="Somewhat">Somewhat</option>
-                        <option value="Mostly">Mostly</option>
-                        <option value="Definitely">Definitely</option>
+                      <option value="">Select an option</option>
+                      <option value="Definitely">Definitely</option>
+                      <option value="Mostly">Mostly</option>
+                      <option value="Somewhat">Somewhat</option>
+                      <option value="Not really">Not really</option>
+                      <option value="Not at all">Not at all</option>
                     </select>
                 </div>
 
@@ -77,12 +77,12 @@
                     <label for="relevant">Relevant to you</label>
 
                     <select name="relevant" class="form-control">
-                        <option value="">Select an option</option>
-                        <option value="Not at all">Not at all</option>
-                        <option value="Not really">Not really</option>
-                        <option value="Somewhat">Somewhat</option>
-                        <option value="Mostly">Mostly</option>
-                        <option value="Definitely">Definitely</option>
+                      <option value="">Select an option</option>
+                      <option value="Definitely">Definitely</option>
+                      <option value="Mostly">Mostly</option>
+                      <option value="Somewhat">Somewhat</option>
+                      <option value="Not really">Not really</option>
+                      <option value="Not at all">Not at all</option>
                     </select>
                 </div>
 
@@ -91,11 +91,11 @@
 
                     <select name="inspiring" class="form-control">
                         <option value="">Select an option</option>
-                        <option value="Not at all">Not at all</option>
-                        <option value="Not really">Not really</option>
-                        <option value="Somewhat">Somewhat</option>
-                        <option value="Mostly">Mostly</option>
                         <option value="Definitely">Definitely</option>
+                        <option value="Mostly">Mostly</option>
+                        <option value="Somewhat">Somewhat</option>
+                        <option value="Not really">Not really</option>
+                        <option value="Not at all">Not at all</option>
                     </select>
                 </div>
 
@@ -115,17 +115,17 @@
                 <div class="form-group">
                     <label for="food">How was the quality of food?</label>
                     <select name="food" class="form-control">
-                        <option value="">Select rating</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
+                      <option value="">Select rating</option>
+                      <option value="10">10</option>
+                      <option value="9">9</option>
+                      <option value="8">8</option>
+                      <option value="7">7</option>
+                      <option value="6">6</option>
+                      <option value="5">5</option>
+                      <option value="4">4</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                      <option value="1">1</option>
                     </select>
                 </div>
 

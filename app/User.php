@@ -37,9 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function surveys()
-    //
-    // {
-    //   return $this->hasMany('App\User','id','user_id');
-    // }
+    // need a relationship between user_id & name
+
+    public function surveys()
+
+    {
+      return $this->hasMany('App\Survey');
+    }
 }
