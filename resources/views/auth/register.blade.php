@@ -11,6 +11,20 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+                        {{-- <div class="form-group row {{ $errors->has('job') ? 'has-error' : ''}}"> <!-- Adding of Job title in a dropdown -->
+              <label for="job" class="col-md-4 col-form-label text-md-right">{{ __('Job Title') }}</label>
+
+                <div class="cols-sm-10">
+                <select name="job" class="form-control">
+                  <option value="">Select a Job Title</option> <!-- So that the space isnt blank -->
+                  <option value="Incubator">Incubator</option>
+                  <option value="Facilitator">Facilitator</option>
+                </select>
+                {!! $errors->first('job', '<p class="help-block">:message</p>') !!}
+              </div>
+              </div> --}}
+
+
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 

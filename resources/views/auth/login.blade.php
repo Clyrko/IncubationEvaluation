@@ -11,6 +11,17 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                        {{-- <div class="form-group">
+                            <label for="job" class="col-md-4 col-form-label text-md-right">{{ __('Job Title') }}</label>
+                            <div class="cols-sm-10">
+                            <select name="job" class="form-control">
+                              <option value="">Select Title</option>
+                              <option value="Incubator">Incubator</option>
+                              <option value="Facilitator">Facilitator</option>
+                            </select>
+                          </div>
+                        </div> --}}
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

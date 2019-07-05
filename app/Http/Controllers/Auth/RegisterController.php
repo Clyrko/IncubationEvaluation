@@ -75,4 +75,20 @@ class RegisterController extends Controller
             'training_partner' => $data['training_partner'],
         ]);
     }
+
+//     /**
+//  * Handle a registration request for the application.
+//  *
+//  * @param  \Illuminate\Http\Request  $request
+//  * @return \Illuminate\Http\Response
+//  */
+// public function postRegister(Request $request)
+// {
+//     $response = parent::postRegister($request);
+//
+//     Session::flash('success', "Thanks, {$request->user()->name}! You've been registered and logged in."); // or however else you want to flash your message
+//
+//     return $response;
+// }
+
 }
