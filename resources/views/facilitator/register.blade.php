@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="/facilitators">
                         @csrf
 
                         {{-- <div class="form-group row {{ $errors->has('job') ? 'has-error' : ''}}"> <!-- Adding of Job title in a dropdown -->
