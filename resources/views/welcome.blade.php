@@ -79,7 +79,15 @@
                 </div>
             @endif
 
+
+
             <div class="content">
+
+              @if(session('message'))
+                <h2>{{ session('message') }}</h2>
+              @endif
+
+
                 <div class="title m-b-md">
                     Incubation
                 </div>
