@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Facilitator;
 
 use App\facilitator;
 use App\Http\Controllers\Controller;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/survey';
+    protected $redirectTo = '/Facilitatorsurvey';
 
     /**
      * Create a new controller instance.
@@ -52,9 +52,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phone_number' => ['required', 'numeric', 'digits_between:10,13', 'unique:users'],
-            'team_name' => ['required', 'string', 'max:255'],
-            'training_partner' => ['required'],
+            'course_title' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -71,10 +69,15 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phone_number' => $data['phone_number'],
-            'team_name' => $data['team_name'],
-            'training_partner' => $data['training_partner'],
+            'course_title' => $data['course_title'],
         ]);
     }
+
+    public function showRegistrationForm()
+    {
+        return view('facilitator.register');
+    }
+
 
 //     /**
 //  * Handle a registration request for the application.
