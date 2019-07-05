@@ -9,6 +9,8 @@ class Survey extends Model
     protected $fillable = [
       'user_id', 'rating', 'inspire', 'best_part', 'worst', 'interesting', 'relevant', 'inspiring', 'satisfy', 'problem', 'food', 'food_selection', 'changes', 'thoughts'
     ];
+
+    // protected $guarded =[];
 }
 
 /**

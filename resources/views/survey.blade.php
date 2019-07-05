@@ -30,7 +30,7 @@
               </div>
               <div class="form-group">
                   <label for="rating">Were you inspired by today's program?</label>
-                  <select name="hype" class="form-control">
+                  <select name="inspire" class="form-control">
                       <option value="">Select rating</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
