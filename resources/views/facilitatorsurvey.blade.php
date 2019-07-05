@@ -11,23 +11,71 @@
 
           <form action="/survey" method="post">
             @csrf
-              <div class="form-group">
-                  <label for="rating">How would you rate today's program?</label>
-                  <select name="rating" class="form-control">
-                      <option value="">Select rating</option>
-                      <option value="10">10</option>
-                      <option value="9">9</option>
-                      <option value="8">8</option>
-                      <option value="7">7</option>
-                      <option value="6">6</option>
-                      <option value="5">5</option>
-                      <option value="4">4</option>
-                      <option value="3">3</option>
-                      <option value="2">2</option>
-                      <option value="1">1</option>
-                      {{-- <option value="2">2</option> --}}
-                  </select>
-              </div>
+            <h2 style="text-align:center">Day's Activities</h2>
+
+            <div class="form-group">
+                <label for="objective">To what extent do you feel the sessions met its objectives?</label>
+
+                <select name="objective" class="form-control">
+                  <option value="">Select an option</option>
+                  <option value="Completely">Completely</option>
+                  <option value="Somewhat">Somewhat</option>
+                  <option value="Not at all">Not at all</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="explain">Please explain your response
+                </label>
+                <textarea name="explain" class="form-control"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="describe">Describe five(5) things would you do differently next time (think in terms of
+                  methodology used, time management, level of participation in the session)
+                </label>
+                <textarea name="describe" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="list">List any training techniques or activities that you felt helped to achieve the
+                  workshop objectives (e.g. role play, case studies, presentations etc.).
+                  Please name the session that they were used in.
+                </label>
+                <textarea name="list" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="materials">Were there any training materials that you felt helped achieve the session’s
+                  objectives? (e.g. handouts, examples etc.).
+                  Please name the session that they were used in.
+                </label>
+                <textarea name="materials" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="prepare">What additional materials would have been useful in helping you prepare for
+                  the program?
+                </label>
+                <textarea name="prepare" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery">What additional materials would have been useful in the delivery of the
+                  program?
+                </label>
+                <textarea name="delivery" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="modules">What additional materials would have been useful in the delivery of the
+                  program?
+                </label>
+                <textarea name="modules" class="form-control"></textarea>
+            </div>
+
+
               <div class="form-group">
                   <label for="rating">Were you inspired by today's program?</label>
                   <select name="inspire" class="form-control">
@@ -99,7 +147,6 @@
                     </select>
                 </div>
 
-                <h2 style="text-align:center">The House</h2>
 
                 <div class="form-group">
                     <label for="satisfy">Were you satisfied with the house</label><br />
@@ -107,10 +154,7 @@
                     <input type="radio" name="satisfy" value="No">No<br />
                 </div>
 
-                <div class="form-group">
-                    <label for="problem">Any problems? Share them</label>
-                    <textarea name="problem" class="form-control"></textarea>
-                </div>
+
 
                 <div class="form-group">
                     <label for="food">How was the quality of food?</label>
