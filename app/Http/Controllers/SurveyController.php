@@ -18,9 +18,13 @@ class SurveyController extends Controller
 
     public function store(CreateSurveyRequest $request) // I think were the database info will be going
     {
+<<<<<<< HEAD
         // $user = Survey::create($request->all()+['user_id'=>auth()->id()]);
         //
         // return redirect('/');
+=======
+        $user = Survey::create($request->all() + ['user_id' => auth()->id()]);
+>>>>>>> ghaff
 
      $mainUser = Survey::where('user_id', auth()->id())->whereRaw('DATE(created_at) = CURRENT_DATE')->get();
 

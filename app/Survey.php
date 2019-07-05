@@ -10,6 +10,8 @@ class Survey extends Model
       'user_id', 'rating', 'inspire', 'best_part', 'worst', 'interesting', 'relevant', 'inspiring', 'satisfy', 'problem', 'food', 'food_selection', 'changes', 'thoughts'
     ];
 
+    // protected $guarded =[];
+
 
 /**
  * The attributes that should be hidden for arrays.
