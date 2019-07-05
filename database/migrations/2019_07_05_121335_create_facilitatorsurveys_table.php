@@ -14,8 +14,17 @@ class CreateFacilitatorsurveysTable extends Migration
     public function up()
     {
         Schema::create('facilitatorsurveys', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+          $table->bigIncrements('id');
+          $table->integer('user_id');
+          $table->timestamps();
+          $table->string('objectives');
+          $table->string('explain');
+          $table->string('describe');
+          $table->string('list');
+          $table->string('materials');
+          $table->string('prepare');
+          $table->string('delivery');
+          $table->string('modules');
         });
     }
 
