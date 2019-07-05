@@ -22,4 +22,5 @@ Auth::routes();
 Route::get('/survey', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index'); // Redirecting home to survey page
 Route::post('/survey', 'SurveyController@store');
-Route::get('/facilitator', 'FacilitatorSurveyController@index');
+Route::get('/facilitator/login', 'FacilitatorSurveyController@index');
+Route::get('/facilitator/register', 'FacilitatorSurveyController@index');
