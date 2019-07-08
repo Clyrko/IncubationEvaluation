@@ -7,14 +7,19 @@
     </div>
     <div class="col-md-6">
 
-        <form action="/survey" method="post">
+        <form action="/facilitatorsurvey" method="post">
           @csrf
+          @if (count($errors) > 0)
+             @foreach ($errors as $error)
+                {{ $error }}
+             @endforeach
+          @endif
           <h2 style="text-align:center">Day's Activities</h2>
 
           <div class="form-group">
-              <label for="objective">To what extent do you feel the sessions met its objectives?</label>
+              <label for="objectives">To what extent do you feel the sessions met its objectives?</label>
 
-              <select name="objective" class="form-control">
+              <select name="objectives" class="form-control">
                 <option value="">Select an option</option>
                 <option value="Completely">Completely</option>
                 <option value="Somewhat">Somewhat</option>
@@ -74,6 +79,8 @@
           </div>
 
               <input type="submit" class="btn btn-primary btn-block" value="Submit" />
+
+
         </form>
 
     </div>

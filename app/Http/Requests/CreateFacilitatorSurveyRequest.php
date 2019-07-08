@@ -26,14 +26,14 @@ class CreateFacilitatorSurveyRequest extends FormRequest
         return [
             //
             // 'user_id' => 'required',
-            'objectives' => 'required',
+            // 'objectives' => 'required',
             'explain' => 'required',
-            'describe' => 'required',
-            'list' => 'required',
-            'materials' => 'required',
-            'prepare' => 'required',
-            'delivery' => 'required',
-            'modules' => 'required',
+            // 'describe' => 'required',
+            // 'list' => 'required',
+            // 'materials' => 'required',
+            // 'prepare' => 'required',
+            // 'delivery' => 'required',
+            // 'modules' => 'required',
         ];
     }
 }

@@ -15,6 +15,10 @@ class FacilitatorSurveyController extends Controller
       //
       // return redirect('/');
 
+      dd($request->explain);
+      // $this->validate($request,[
+      //   'explain' => 'required'
+      // ]);
    $mainUser = Facilitatorsurvey::where('user_id', auth()->id())->whereRaw('DATE(created_at) = CURRENT_DATE')->get();
 
 
@@ -38,5 +42,7 @@ class FacilitatorSurveyController extends Controller
       session()->flash('message','You have filled a survey today');
       return redirect()->back();
     }
+
+    return redirect()->back();
   }
 }

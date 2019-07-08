@@ -22,11 +22,12 @@ Auth::routes();
 Route::get('/survey', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index'); // Redirecting home to survey page
 Route::post('/survey', 'SurveyController@store');
+Route::post('/facilitatorsurvey', 'FacilitatorSurveyController@store');
 
 
 Route::prefix('facilitator')->group(function () {
     Route::get('/', 'FacilitatorsController@index')->name('facilitator.dashboard');
-    Route::get('dashboard', 'FacilitatorsController@index')->name('facilitator.dashboard');
+    // Route::get('dashboard', 'FacilitatorsController@index')->name('facilitator.dashboard');
     Route::get('register', 'FacilitatorsController@create')->name('facilitator.register');
     Route::post('register', 'FacilitatorsController@store')->name('facilitator.register.store');
     Route::get('login', 'Auth\FacilitatorLoginController@login')->name('facilitator.auth.login');

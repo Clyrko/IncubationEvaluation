@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Facilitatorsurvey extends Model
+class FacilitatorSurvey extends Model
 {
-  protected $fillable = [
-    'user_id', 'objectives', 'explain', 'describe', 'list', 'materials', 'prepare', 'delivery', 'modules',
-  ];
+  // protected $fillable = [
+  //   'user_id', 'objectives', 'explain', 'describe', 'list', 'materials', 'prepare', 'delivery', 'modules',
+  // ];
 
-  public function user()
+  public function facilitator()
     {
-    return $this->belongsTo(User::class);
+    return $this->belongsTo(Facilitator::class);
     }
 
 

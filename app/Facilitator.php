@@ -17,7 +17,7 @@ class Facilitator extends Authenticatable
      * @var array
      */
      protected $fillable = [
-              'name', 'email', 'password', 'phone_number', 'course_title' // things stored in the database
+              'name', 'email', 'password', 'phone_number', 'course_title', // things stored in the database
      ];
 
     /**
