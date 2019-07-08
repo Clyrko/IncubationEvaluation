@@ -5,82 +5,77 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Facilitator Login</div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('facilitator.auth.loginAdmin') }}">
-                        {{ csrf_field() }}
+                <div class="card-body">
+                  <form class="form-horizontal" method="POST" action="{{ route('facilitator.auth.loginAdmin') }}">
+                        @csrf
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        {{-- <div class="form-group">
+                            <label for="job" class="col-md-4 col-form-label text-md-right">{{ __('Job Title') }}</label>
+                            <div class="cols-sm-10">
+                            <select name="job" class="form-control">
+                              <option value="">Select Title</option>
+                              <option value="Incubator">Incubator</option>
+                              <option value="Facilitator">Facilitator</option>
+                            </select>
+                          </div>
+                        </div> --}}
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                    {{ __('Login') }}
                                 </button>
-<hr>
-                                {{-- @component('facilitator.components.test')
-                                  @slot('kamal')
-                                         Forbidden kamal
-                                  @endslot
 
-
-
-                                  You are not allowed to access this resource!
-                                @endcomponent
-
-                                @foreach([1,2,3,4,5] as $item)
-
-                                    @foreach([6,7,8,9,10] as $item2)
-                                      @if ($loop->parent->first)
-                                          kamal
-                                      @endif
-
-                                    @endforeach
-                                @endforeach --}}
-
-                                {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a> --}}
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </form>

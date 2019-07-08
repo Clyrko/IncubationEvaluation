@@ -102,7 +102,7 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'facilitators' => [
+        'facilitator' => [
             'provider' => 'facilitators',
             'table' => 'password_resets',
             'expire' => 60,

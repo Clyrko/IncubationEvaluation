@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                  <form class="form-horizontal" method="POST" action="{{ route('facilitator.auth.loginAdmin') }}">
                         @csrf
 
                         {{-- <div class="form-group">

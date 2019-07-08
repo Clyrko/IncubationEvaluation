@@ -28,13 +28,17 @@ class FacilitatorsController extends Controller
         $this->validate($request, [
           'name'          => 'required',
           'email'         => 'required',
-          'password'      => 'required'
+          'password'      => 'required',
+          'phone_number'  => 'required',
+          'course_title'  => 'required',
         ]);
         // store in the database
         $facilitator = new Facilitator;
         $facilitator->name = $request->name;
         $facilitator->email = $request->email;
         $facilitator->password=bcrypt($request->password);
+        $facilitator->phone_number = $request->phone_number;
+        $facilitator->course_title = $request->course_title;
         $facilitator->save();
         return redirect()->route('facilitator.auth.login');
     }
@@ -81,5 +85,3 @@ class FacilitatorsController extends Controller
         //
     }
 }
-
-
