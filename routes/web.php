@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/survey', 'HomeController@index')->name('home');
-
+Route::get('/home', 'HomeController@index'); // Redirecting home to survey page
 Route::post('/survey', 'SurveyController@store');
 
 

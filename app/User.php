@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // need a relationship between user_id & name
+
+    public function surveys()
+
+    {
+      return $this->hasMany('App\Survey');
+    }
 }

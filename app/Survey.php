@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\User;
 class Survey extends Model
 {
     protected $fillable = [
@@ -11,7 +11,7 @@ class Survey extends Model
     ];
 
     // protected $guarded =[];
-}
+
 
 /**
  * The attributes that should be hidden for arrays.
@@ -31,3 +31,9 @@ class Survey extends Model
 //     'email_verified_at' => 'datetime',
 // ];
 // }
+
+public function user()
+  {
+  return $this->belongsTo(User::class);
+  }
+}

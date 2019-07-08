@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Facilitator;
 
-use App\User;
+use App\facilitator;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/survey';
+    protected $redirectTo = '/Facilitatorsurvey';
 
     /**
      * Create a new controller instance.
@@ -50,11 +50,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:facilitators'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'phone_number' => ['required', 'numeric', 'digits_between:10,13', 'unique:users'],
-            'team_name' => ['required', 'string', 'max:255'],
-            'training_partner' => ['required'],
+            'phone_number' => ['required', 'numeric', 'digits_between:10,13', 'unique:facilitators'],
+            'course_title' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -66,15 +65,39 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Facilitator::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phone_number' => $data['phone_number'],
-            'team_name' => $data['team_name'],
-            'training_partner' => $data['training_partner'],
+            'course_title' => $data['course_title'],
         ]);
     }
+
+    public function showRegistrationForm()
+    {
+        return view('facilitator.register');
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        // $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('facilitators');
+    }
+
+
+
 
 //     /**
 //  * Handle a registration request for the application.

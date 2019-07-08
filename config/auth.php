@@ -32,11 +32,12 @@ return [
     |
     */
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-        'api' => [
+      'web' => [
+          'driver' => 'session',
+          'provider' => 'users',
+      ],
+
+    'api' => [
             'driver' => 'token',
             'provider' => 'users',
         ],
@@ -74,6 +75,8 @@ return [
             'driver' => 'eloquent',
             'model' => App\Facilitator::class,
         ],
+
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -102,7 +105,8 @@ return [
         'facilitators' => [
             'provider' => 'facilitators',
             'table' => 'password_resets',
-            'expire' => 15,
+            'expire' => 60,
         ],
+
     ],
 ];

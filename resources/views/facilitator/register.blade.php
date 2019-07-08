@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="/facilitators">
                         @csrf
 
                         {{-- <div class="form-group row {{ $errors->has('job') ? 'has-error' : ''}}"> <!-- Adding of Job title in a dropdown -->
@@ -90,39 +90,18 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="team_name" class="col-md-4 col-form-label text-md-right">{{ __('Team Name') }}</label>
+                            <label for="course_title" class="col-md-4 col-form-label text-md-right">{{ __('Course Title (Session)') }}</label>
 
                             <div class="col-md-6">
-                                <input id="team_name" type="text" class="form-control @error('team_name') is-invalid @enderror" name="team_name" value="{{ old('team name') }}" required autocomplete="team name" autofocus>
+                                <input id="course_title" type="text" class="form-control @error('course_title') is-invalid @enderror" name="course_title" value="{{ old('Course Title (Session)') }}" required autocomplete="Course Title (Session)" autofocus>
 
-                                @error('team_name')
+                                @error('course_title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row {{ $errors->has('training_partner') ? 'has-error' : ''}}"> <!-- Adding of Training Partners in a dropdown -->
-              <label for="training_partner" class="col-md-4 col-form-label text-md-right">{{ __('Training Partner') }}</label>
-
-                <div class="cols-sm-10">
-                <select name="training_partner" class="form-control">
-                  <option value="">Select a Training Partner</option> <!-- So that the space isnt blank -->
-                  <option value="iSpace Foundation">iSpace Foundation</option>
-                  <option value="Ghana Tech Lab">Ghana Tech Lab</option>
-                  <option value="iCode">iCode</option>
-                  <option value="Dansyn GH Ltd">Dansyn GH Ltd</option>
-                  <option value="Ho Node">Ho Node</option>
-                  <option value="Yison Consult">Yison Consult</option>
-                  <option value="Grassroots Hub">Grassroots Hub</option>
-                  <option value="Hopin Academy">Hopin Academy</option>
-                  <option value="Kumasi Hive">Kumasi Hive</option>
-
-                </select>
-                {!! $errors->first('training partner', '<p class="help-block">:message</p>') !!}
-              </div>
-              </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
